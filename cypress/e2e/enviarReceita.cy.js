@@ -1,4 +1,3 @@
-import { fakerPT_BR } from '@faker-js/faker'
 import { faker } from '@faker-js/faker/locale/pt_BR'
 
 describe('Feature Cotar', () => {
@@ -23,7 +22,7 @@ describe('Feature Cotar', () => {
       nome: faker.person.firstName() + " " + faker.person.middleName(),
       celular: faker.phone.number('## 9####-####')
     }
-    
+
     cy.enviarReceitaFalha(receitaFalha)
   })
 })
