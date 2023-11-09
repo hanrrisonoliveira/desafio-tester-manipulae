@@ -1,0 +1,17 @@
+{
+  "name": "desafio-tester",
+  "version": "1.0.0",
+  "description": "Desafio Tester Manipulae",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "keywords": [
+    "manipulae"
+  ],
+  "author": "Hanrrison Oliveira",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.5.0"
+  }
+}
