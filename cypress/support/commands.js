@@ -1,25 +1,21 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('enviarReceitaSucesso', () => {
+    cy.get('label[for=file-uploader]').selectFile('cypress/fixtures/receita.png')
+    cy.get('input[name=zip]').type('13231090')
+    cy.get('input[type=email]').type('emailteste@gmail.com')
+    cy.get('input[name=name]').type('Hanrrison Oliveira')
+    cy.get('input[type=tel]').type('11975621174')
+    cy.get('input[type=checkbox]').check({force: true})
+    cy.get('button[type=submit]').contains('Enviar Receita').click()
+    cy.contains('h2', 'Receita enviada com sucesso!')
+})
+
+Cypress.Commands.add('enviarReceitaFalha', () => {
+    cy.get('label[for=file-uploader]').selectFile('cypress/fixtures/receita2.jpg')
+    cy.get('input[name=zip]').type('69917-740')
+    cy.get('input[type=email]').type('emailteste@gmail.com')
+    cy.get('input[name=name]').type('Cliente do Acre')
+    cy.get('input[type=tel]').type('11975621174')
+    cy.get('input[type=checkbox]').check({force: true})
+    cy.get('button[type=submit]').contains('Enviar Receita').click()
+    cy.contains('h2', 'Que pena. Ainda não atendemos sua região.')
+})
