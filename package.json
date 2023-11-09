@@ -12,6 +12,7 @@
   "author": "Hanrrison Oliveira",
   "license": "MIT",
   "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
     "cypress": "^13.5.0"
   }
 }

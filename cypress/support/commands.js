@@ -1,20 +1,20 @@
-Cypress.Commands.add('enviarReceitaSucesso', () => {
+Cypress.Commands.add('enviarReceitaSucesso', receitaSucesso => {
     cy.get('label[for=file-uploader]').selectFile('cypress/fixtures/receita.png')
     cy.get('input[name=zip]').type('13231090')
-    cy.get('input[type=email]').type('emailteste@gmail.com')
-    cy.get('input[name=name]').type('Hanrrison Oliveira')
-    cy.get('input[type=tel]').type('11975621174')
+    cy.get('input[type=email]').type(receitaSucesso.email)
+    cy.get('input[name=name]').type(receitaSucesso.nome)
+    cy.get('input[type=tel]').type(receitaSucesso.celular)
     cy.get('input[type=checkbox]').check({force: true})
     cy.get('button[type=submit]').contains('Enviar Receita').click()
-    cy.contains('h2', 'Receita enviada com sucesso!')
+    cy.contains('h2', 'Receita enviadacom sucesso!')
 })
 
-Cypress.Commands.add('enviarReceitaFalha', () => {
+Cypress.Commands.add('enviarReceitaFalha', receitaFalha => {
     cy.get('label[for=file-uploader]').selectFile('cypress/fixtures/receita2.jpg')
-    cy.get('input[name=zip]').type('69917-740')
-    cy.get('input[type=email]').type('emailteste@gmail.com')
-    cy.get('input[name=name]').type('Cliente do Acre')
-    cy.get('input[type=tel]').type('11975621174')
+    cy.get('input[name=zip]').type('69982-000')
+    cy.get('input[type=email]').type(receitaFalha.email)
+    cy.get('input[name=name]').type(receitaFalha.nome)
+    cy.get('input[type=tel]').type(receitaFalha.celular)
     cy.get('input[type=checkbox]').check({force: true})
     cy.get('button[type=submit]').contains('Enviar Receita').click()
     cy.contains('h2', 'Que pena. Ainda não atendemos sua região.')
