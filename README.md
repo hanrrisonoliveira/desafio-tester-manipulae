@@ -34,3 +34,10 @@ npx cypress open
 ```
 npx cypress run
 ```
+
+### Para executar os casos de testes manualmente: 
+
+```
+1. Abrir o diretório cypress/e2e/
+2. Abrir o documento testeManual.md e seguir o passo a passo
+```
