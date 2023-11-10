@@ -19,3 +19,11 @@ Cypress.Commands.add('enviarReceitaFalha', receitaFalha => {
     cy.get('button[type=submit]').contains('Enviar Receita').click()
     cy.contains('h2', 'Que pena. Ainda não atendemos sua região.')
 })
+
+Cypress.Commands.add('uploadImagemErro', () => {
+    cy.origin('https://manipulaecombr-my.sharepoint.com', () => {
+    cy.visit('/:f:/g/personal/matheus_marinho_manipulae_com_br/Eklx5HErM45OsGgxOLHB3Q0BxZZSzVBzW0FvUKY0EoVajQ?e=XyoPxV')
+    cy.get('button[data-automationid=uploadCommand]').click()
+    cy.get('button[data-automationid=uploadFileCommand]').selectFile('cypress/screenshots/enviarReceita.cy.js/teste.png')    
+  })
+})

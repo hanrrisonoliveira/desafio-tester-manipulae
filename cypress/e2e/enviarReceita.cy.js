@@ -6,6 +6,15 @@ describe('Feature Cotar', () => {
     cy.visit('/')
   })
 
+  afterEach(function () {
+    if (this.currentTest.state === "failed") {
+      cy.log('O teste falhou. Realizando o upload da imagem');
+      cy.uploadImagemErro()
+    } else {
+      cy.log('Teste validado com sucesso')
+    }
+  });
+
   it('Enviar receita com sucesso', () => {
     const receitaSucesso = {
       email: faker.internet.email(),
