@@ -123,7 +123,7 @@ Este documento tem como objetivo descrever os cenários de testes realizados man
 
 **Então** é exibido a região do CEP
 
-## RN6 - O Celular deve ser um campo numérico com exatamente 11 dígitos
+### RN6 - O Celular deve ser um campo numérico com exatamente 11 dígitos
 
 **CT14 - Validar o campo Celular com 11 dígitos**
 
